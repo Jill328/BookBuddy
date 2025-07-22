@@ -1,0 +1,60 @@
+
+.account-container {
+    max-width: 600px;
+    margin: 6rem auto;
+    background-color: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.account-container h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    color: #333;
+}
+
+.user-details p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.reservation-list {
+    list-style: none;
+    padding: 0;
+}
+
+.reservation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+}
+
+.reservation-item button {
+    background-color: #ff5c5c;
+    color: white;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    border:none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.reservaton-item button:hover {
+    background-color: #d2d2d2;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+    font-weight: bold;
+}

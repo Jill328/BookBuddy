@@ -10,4 +10,24 @@ body {
   margin-right: 10px;
 }
 
-/* Add your own custom styles here */
+.welcome-banner {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  border-bottom: 1px solid #add;
+  margin-bottom: 2rem;
+
+}
+
+.welcome-banner h1 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.welcome-banner p {
+  font-size: 1.1rem;
+  color: #555;
+}
+  
+

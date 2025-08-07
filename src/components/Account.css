@@ -1,60 +1,136 @@
-
 .account-container {
-    max-width: 600px;
-    margin: 6rem auto;
-    background-color: #ffffff;
-    padding: 2rem 2.5rem;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.account-container h1 {
+
+.account-header {
     text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.75rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.account-header h3 {
     color: #333;
+    margin-bottom: 1rem;
+}
+
+.account-header p {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}
+
+.user-details {
+    margin-top: 1rem;
 }
 
 .user-details p {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0rem;
+    ;
     font-size: 1rem;
-    color: #444;
+    color: black;
 }
 
-.reservation-list {
+.reservation-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+.reservations-list {
     list-style: none;
     padding: 0;
 }
 
 .reservation-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #f7f7f7;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.75rem;
-    border-radius: 8px;
+    gap: 1rem;
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
 }
 
-.reservation-item button {
-    background-color: #ff5c5c;
-    color: white;
-    padding: 0.5rem 0.9rem;
+.reservation-item:hover {
+    transform: translateY(-3px);
+}
+
+.reservation-thumbnail img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
     border-radius: 6px;
-    border:none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-right: 15px;
+    
 }
 
-.reservaton-item button:hover {
-    background-color: #d2d2d2;
+.reservation-info p {
+    margin: 5px;
+   color: #555
+}
+
+.reservation-info h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.reservation-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.return-button:hover {
+    background-color: #005fa3;
+}
+
+.return-button {
+    background-color: #e63946;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3 ease;
+}
+
+.return-button:hover {
+    background-color: #d62828;
 }
 
 .error-message {
     color: red;
     margin-top: 1rem;
     font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .reservation-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+    }
+
+    .reservation-thumbnail img {
+        margin-bottom: 0.5rem;
+    }
+
+    .return-button {
+        align-self: center;
+        margin-top: 0.5rem;
+    }
 }

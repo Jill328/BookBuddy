@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Catalog.css';
-import './Banner.css';
-import Banner from './Banner';
 
 
 function Catalog () {
@@ -26,9 +24,10 @@ function Catalog () {
 
     return (
     <>
-        <Banner title="Welcome to BookBuddy"
-            subtitle= "Explore our growing digital catalog." 
-            />
+    <div className="header">
+        <h1>Catalog</h1>
+    </div>
+       
 
         <div className="search-bar">
             <input

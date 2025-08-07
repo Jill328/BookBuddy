@@ -1,21 +1,25 @@
-import './Banner.css';
-import PropTypes from 'prop-types';
+import "./Banner.css";
+import { useAuth } from "../useContext";
 
-function Banner({ title, subtitle}) {
-    return (
-        <div className="page-bannner">
-         <div className="banner-content">
-            <h1>{title}</h1>
-            {subtitle &&
-            <p>{subtitle}</p>}
-         </div>
-        </div>    
-    )
+function Banner() {
+  const { user } = useAuth();
+  return (
+    <div className="page-bannner">
+      <div className="page-content">
+        <h1>My Account</h1>
+        {user && (
+          <div className="user-details">
+            <p>
+              <strong>Name:</strong> {user.firstname} {user.lastname}
+            </p>
+            <p>
+              <strong>Email:</strong> {user.email}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
-
-Banner.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-};
 
 export default Banner;

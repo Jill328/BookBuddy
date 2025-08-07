@@ -76,7 +76,7 @@ const fetchUser = useCallback(async (authToken = token) => {
     };
 
   return (
-    <AuthContext.Provider value ={{ user, token, login, register, apiMessage }}>
+    <AuthContext.Provider value ={{ user, token, setToken, login, register, apiMessage }}>
       {children}
     </AuthContext.Provider>
    )}

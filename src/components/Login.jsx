@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 //import React from 'react';
 import { useState, useContext } from 'react';
-import { AuthContext} from "../UseContext";
+import { AuthContext} from "../useContext";
 import './Login.css';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';

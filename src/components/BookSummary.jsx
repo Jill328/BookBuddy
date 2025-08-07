@@ -2,7 +2,7 @@
 import { useParams} from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { useAuth } from '../UseContext';
+import { useAuth } from '../useContext';
 import './BookSummary.css';
 import './Banner.css';
 
@@ -26,7 +26,7 @@ function BookSummary () {
         }   catch (error) {
             setError('Failed to fetch book details.');
         }
-        };
+      };
 
       fetchBook();
     }, [bookid]);
@@ -58,47 +58,50 @@ function BookSummary () {
     
     return (
       <>
-      <div className="page-banner">
-       <div className="banner-content">
-         <h1>{book.title}</h1>
-         <p>{book.author}</p>
-       </div>
-      </div>   
-
-      <div className="book-detail-container">
-        <img src={book.coverimage} alt={book.title} />
-         <h2>{book.title}</h2>
-         <p><strong>Author:</strong>{book.description}</p>
+        <div className="page-banner">
+          <div className="banner-content">
+            <h1> {book.title}</h1>
+            <p>{book.author}</p>
+          </div>   
+        </div>  
          
-            <p><strong>Author:</strong> {book.author}</p>
-            <p><strong>Description:</strong> {book.description}</p>
-  
-            
-            <p>
-              <strong>Availability:</strong>{""}
-               {book.available ? (
-                <span className="available">Available</span>
-               ) : (
-                <span className="unavailable">Checked Out</span>
-               )}
-            </p>
- 
-            {token && (
-                <button
-                   className="reserve-button"
-                   onClick={handleReserve}
-                   disabled={!book.available}
-                >
-                 {book.available ? 'Reserve' : 'Already Reserved'}
-                </button>
-            )}
+      <div className="book-summary-container">
+        <div className="book-cover-wrapper">
+          <img src={book.coverimage} alt={book.title} className="book-cover" />
+         <h2>{book.title}</h2>
+        </div>
+      </div>
 
-        {error && <p className="error-message">{error}</p>}
-        {success && < p className="success-message">{success}</p>}
+
+      <div className="book-details">
+        <h2>{book.title}</h2>
+           <p><strong>Author:</strong>{book.author}</p>
+           <p><strong>Description:</strong> {book.description}</p>
+   
+         <p>
+           <strong>Availability:</strong>{""}
+           {book.available ? (
+             <span className="available"> Available</span>
+           ) : (
+             <span className="unavailable"> Checked Out</span>
+           )}
+         </p>
+ 
+         {token && (
+           <button
+             className="reserve-button"
+             onClick={handleReserve}
+             disabled={!book.available}
+          >
+             {book.available ? 'Reserve' : 'Already Reserved'}
+          </button>
+          )}
+
+          {error && <p className="error-message">{error}</p>}
+          {success && < p className="success-message">{success}</p>}
       </div>
      </> 
     );
 }
-
 export default BookSummary
 

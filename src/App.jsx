@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Catalog from './components/Catalog';
-import { AuthProvider } from './UseContext';
+import { AuthProvider } from './useContext';
 import BookSummary from './components/BookSummary';
 import Login from './components/Login';
 import Register from './components/Register';
